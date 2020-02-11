@@ -20,8 +20,6 @@ public class Order implements Runnable {
 	@Override
 	public void run() {
 		//Escogee la mesa
-		
-		
 		int id_table = (int) Thread.currentThread().getId();
 		this.table = dao_table.searchTableById(id_table);
 		System.out.println(id_table);
@@ -43,7 +41,7 @@ public class Order implements Runnable {
 			e.printStackTrace();
 		}
 		// Pongo la mesa en estado de comiendo
-		this.table.setState(4);
+		this.table.setState(3);
 		// Espero el tiempo de comer
 		try {
 			Thread.sleep(this.eating_time);

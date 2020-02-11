@@ -21,7 +21,7 @@ public class Order implements Runnable {
 	public void run() {
 		//Escogee la mesa
 		int id_table = (int) Thread.currentThread().getId();
-		this.table = dao_table.searchTableById(id_table);
+		this.table = dao_table.searchTableAvaiable();
 		System.out.println(id_table);
 		this.table.setState(1);
 		// Espero el tiempo de tomar mi orden

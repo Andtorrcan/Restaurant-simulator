@@ -56,8 +56,12 @@ public class DAOTable {
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		DAOTable d = new DAOTable();
-		System.out.println(d.searchTableById(22));
+	public Table searchTableAvaiable() {
+		for (int i = 0; i < this.tables_list.size(); i++) {
+			if(this.tables_list.get(i).isState() == 0) {
+				return this.tables_list.get(i);
+			}
+		}
+		return null;
 	}
 }

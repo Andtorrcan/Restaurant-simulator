@@ -20,13 +20,18 @@ public class Order implements Runnable {
 	@Override
 	public void run() {
 		//Escogee la mesa
-		int id_table = (int) Thread.currentThread().getId();
+		
+		try {
+			Thread.sleep(this.order_time *10);
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		this.table = dao_table.searchTableAvaiable();
-		System.out.println(id_table);
 		this.table.setState(1);
 		// Espero el tiempo de tomar mi orden
 		try {
-			Thread.sleep(this.order_time);
+			Thread.sleep(this.order_time *10);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -35,7 +40,7 @@ public class Order implements Runnable {
 		this.table.setState(2);
 		// Espero el tiempo de tomar mi orden
 		try {
-			Thread.sleep(this.waiting_time);
+			Thread.sleep(this.waiting_time *10);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -44,7 +49,7 @@ public class Order implements Runnable {
 		this.table.setState(3);
 		// Espero el tiempo de comer
 		try {
-			Thread.sleep(this.eating_time);
+			Thread.sleep(this.eating_time *10);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();

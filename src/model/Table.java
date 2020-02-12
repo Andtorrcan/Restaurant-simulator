@@ -48,7 +48,6 @@ public class Table {
 
 	@Override
 	public String toString() {
-		return "Table [id=" + id + ", state=" + state + ", x_coordinate=" + x_coordinate + ", y_coordinate="
-				+ y_coordinate + "]";
+		return "Table [id=" + id + ", state=" + state + "]";
 	}
 }

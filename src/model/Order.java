@@ -20,7 +20,6 @@ public class Order implements Runnable {
 	@Override
 	public void run() {
 		//Escogee la mesa
-		
 		try {
 			Thread.sleep(this.order_time *10);
 

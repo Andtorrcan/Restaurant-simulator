@@ -45,9 +45,7 @@ public class ControllerRestaurant extends SwingWorker<Void, ArrayList<Table>> im
 
 	}
 
-	public static void main(String[] args) {
-		ControllerRestaurant c = new ControllerRestaurant();
-	}
+	
 
 	@Override
 	protected Void doInBackground() throws Exception {
@@ -72,5 +70,9 @@ public class ControllerRestaurant extends SwingWorker<Void, ArrayList<Table>> im
 	@Override
 	protected void done() {
 		this.window.sendDataTablesToPanelToDraw(this.dao_table.getTables_list());
+	}
+	
+	public static void main(String[] args) {
+		ControllerRestaurant c = new ControllerRestaurant();
 	}
 }
